@@ -8,8 +8,8 @@
     <!-- Internal css-->
     <style>
         :root{
-            background-color:pink;
-            --baseColor:#606468 ;
+            background: url(./images/dark-background.png);
+            --baseColor:crimson;
         }
 
         .grid{
@@ -18,22 +18,25 @@
             max-inline-size: inherit;
             display:grid;
         }
-
+        .grid h1{
+            -webkit-text-fill-color: white;
+        }
         textarea:focus,textarea:hover{
             background-color: white;
-            border: 3px solid black;
+            border: 3px solid white;
         }
 
         input[type="submit"]{
-            background-color:black;
+            background-color: crimson;
             color:white; 
             font-size: medium;
             font-weight: 800;
-            width: 150px;
-            height: 40px;
+            width: 250px;
+            height: 50px;
             text-align: center;
             text-transform: uppercase;
             text-decoration: solid ;
+            border:2px solid white;
         }
 
         input[type="submit"]:focus,input[type="submit"]:hover{
@@ -41,7 +44,7 @@
         }
 
         h1{
-            border:10px solid orange ; 
+            border:10px solid crimson ; 
             padding: 20px ;
             text-align: center;
             
@@ -53,14 +56,14 @@
         }
 
         #size{
-            width: 150px;
-            height: 40px;
-            background-color: white;
+            width: 250px;
+            height: 50px;
+            background-color:darkgrey;
             font-display:var(--baseColor);
             text-align: center;
             font-size: 15px;
             font-weight: bold;
-            border:3px solid black;  
+            border:3px solid white;  
         }
 
         p{
@@ -70,10 +73,14 @@
             font-size:15px; 
             text-decoration: solid;
             font-weight: bold;
+            -webkit-text-fill-color: white;
+        }
+        hr{
+            list-style:square;
+            background-color: white;
         }
     </style>
-</head>
-<body>
+
     <!-- Internal javascript code-->
     <script type="text/javascript">
         function generate()
@@ -110,7 +117,8 @@
               
         }
     </script>
-    
+</head>
+<body>
     <!--HTML website-->
     <div class="grid">
         <h1 >QR CODE GENERATOR</h1>
@@ -120,7 +128,7 @@
             <img src id="img">
         </center>
         <center>
-            <textarea placeholder="Enter text here" id="text" cols="50" rows="10"></textarea>
+            <textarea placeholder="Enter text here|" id="text" cols="100" rows="20"></textarea>
         </center>
         <br>
         <br>
@@ -136,12 +144,16 @@
         </center>
         <br>
         <br>
+        <br>
         <center>
             <input type="submit" value="Generate QR" onclick="generate()" >
         </center>
         <br>
         <br>
-        <p>Developed by Aayush Kumar Shrivastava</p>
+        <br>
+        <br>
+        <hr size=2px width=100% color="white">
+        <p>Developed by <u>@Aayush Kumar Shrivastava</u></p>
     </div>
 </body>
 </html>
